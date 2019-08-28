@@ -12,10 +12,10 @@ public class Program
 
     public static void FirstLoading() {
         if (HttpContext.Current.Request.Cookies["firstLoading"].ToString() == null) {
-		HttpContext.Current.Response.Cookies["firstLoading"].Value = "is not first anymore";
-            if(HttpContext.Current.Request.Cookies["zapamti"] != null) {
-                Label1.BackColor  = Color.FromName(HttpContext.Current.Request.Cookies["boja"].ToString());
-            }
+	    	HttpContext.Current.Response.Cookies["firstLoading"].Value = "is not first anymore";
+                if(HttpContext.Current.Request.Cookies["zapamti"] != null) {
+                    Label1.BackColor  = Color.FromName(HttpContext.Current.Request.Cookies["boja"].ToString());
+                }
         }
     }
 
