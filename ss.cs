@@ -14,6 +14,7 @@ public class Program
         if (HttpContext.Current.Request.Cookies["firstLoading"].ToString() == null) {
 	    	HttpContext.Current.Response.Cookies["firstLoading"].Value = "is not first anymore";
                 if(HttpContext.Current.Request.Cookies["zapamti"] != null) {
+                    //treba inicijalizirat label1 negdje
                     Label1.BackColor  = Drawing.Color.FromName(HttpContext.Current.Request.Cookies["boja"].ToString());
                 }
         }
@@ -27,6 +28,6 @@ public class Program
 		colorCookie.Value = selectedColor.ToString();
 		HttpContext.Current.Response.Cookies.Add(colorCookie);
         } else 
-            	HttpContext.Current.Response.Cookies["boja"].Value= DropDownList1.SelectedItem.Value;
+            	HttpContext.Current.Response.Cookies["boja"].Value= selectedColor.ToString();
     }
 }
